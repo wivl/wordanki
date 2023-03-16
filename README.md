@@ -1,0 +1,2 @@
+# wordanki
+ word ---> anki
