@@ -1,3 +1,10 @@
+*.DS_Store
+
+dict/
+
+*.apkg
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
