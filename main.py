@@ -46,6 +46,7 @@ WordCard = genanki.Model(
         "Card Model",
         fields=[
             {'name': 'Word'},
+            {'name': 'Phone'},
             {'name': 'SentenceEn'},
             {'name': 'SentenceZh'},
             {'name': 'Meaning'},
@@ -53,7 +54,7 @@ WordCard = genanki.Model(
         templates=[
             {
                 'name': 'Card 1',
-                'qfmt': '<br><br>{{Word}}<br><br><br>{{SentenceEn}}',
+                'qfmt': '<br><br>{{Word}}<br>{{Phone}}<br><br>{{SentenceEn}}',
                 'afmt': '{{FrontSide}}<br><br>{{SentenceZh}}<br><br><br id="answer">{{Meaning}}'
                 },
             ],
@@ -88,12 +89,17 @@ def make_notes():
                 print('Word "' + word['word'] + '" is not in current dictionary, skipping.')
                 continue
             
-            print('Adding word "' + word['word'] + '"...')
+            print('Adding word "' + word['word'] + '" to deck...')
 
 
             content = []
             # 单词
             content.append(item[0]['headWord'])
+            # 音标
+            if 'usphone' in item[0]['content']['word']['content']:
+                content.append('[' + item[0]['content']['word']['content']['usphone'] + ']')
+            else:
+                content.append('<br>')
             # 英句
             if 'sentence' in item[0]['content']['word']['content'].keys():
 
