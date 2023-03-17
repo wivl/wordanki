@@ -4,6 +4,7 @@ dict/
 
 *.apkg
 
+db/words.json
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
