@@ -53,6 +53,10 @@ python3 main.py -r words.txt # 将 words.txt 文件中的所有单词加入生�
 python3 main.py -g # 使用生词本中的单词生成 anki deck
 ```
 
+## TODOS
+
+* 增加默写模式 音标+中 -> 英
+
 ## shout out
 
 字典资源来自 [kajweb/dict](https://github.com/kajweb/dict)
